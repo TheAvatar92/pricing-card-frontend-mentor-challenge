@@ -1,0 +1,142 @@
+/* to change the default box sizing setting and to make it border box we need to type in the next two things, we then got rid of the h2 and h4 and p margins */
+
+html {
+  box-sizing: border-box;
+  font-family: karla;
+  font-size: 16px; 
+}
+
+h2, h4, p{
+  margin: 0;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body{
+  padding:20px /* this just brings the car in from the edge of the creen */
+}
+
+#card {
+  width:600px;
+  height: 400px;
+  box-shadow: 2px 3px 7px 0px rgba(0,0,0,0.35);   /* we can google box shadow for css, and copy and paste the code in) */
+  border-radius: 5px; /* this rounds the edges, however if any inner containers are square they will spill out, so in this case the bottom containers broke out and the bottom containers were squared still */
+  overflow: hidden; /* this fixes the above problem */
+  
+  
+  
+}
+
+#top-section {
+  width: 100%;
+  height: 45%;
+  padding: 25px;
+  
+  
+    
+}
+
+#bottom-section {
+  width: 100%;
+  height: 55%;
+  color: white; /* all the font in the bottom section is the same color, so we can change the bottom section as awhole */
+  
+  
+  
+}
+
+/* no we need to get the two bottom boxes to sit side ny side with display:inline-block, remember that thr percentages are relevant to their parent container - the whole bottom section */
+
+#bottom-left-section{
+  display: inline-block;
+  width: 50%;
+  height: 100%;
+  /* we originally had a border in here to highlight the boxes before we put in abckground colours */
+  vertical-align:top; /*we had to type this line because the bottom left section was not aligned, this is due to in line blocks not behaving as expected*/
+  background-color: #2ab2af;
+  padding: 25px;
+}
+
+#bottom-right-section{
+  display: inline-block;
+  width: 50%;
+  height: 100%;
+  vertical-align:top;
+  background-color: #2EBFBD;
+  padding: 25px;
+}
+/*we had to close thr html space between the end of thr bottom left division and sthe start f thr bottom right, because when we change the display to in-line, it will count that space as dead space*/
+
+/* font styling below*/
+
+#top-section h2 {
+  color: #2ab2af;
+  margin-bottom: 20px; /* this creates space between sentences */
+  
+}
+
+#top-section h4{
+  color: #c0df34;
+  margin-bottom: 10px
+}
+#top-section p{
+  color: #98a6bd;
+}
+/* the button is a separate element so we can target that indicidually */
+button {
+  color: white; 
+  background-color: #c0df34;
+  border: 0; /*this gets rid of the default border */
+  padding:10px;
+  width: 100%; /* this doesnt reach the des because its parent container has padding, therfore we can set it to 100% */
+  border-radius: 5px;
+  
+   
+}
+/* make the button change when you hover over it, noe that this has its own element section*/
+button:hover{
+  cursor: pointer;
+  background-color: #A9C42D;
+  transform: scale(1.02); /* this makes the button bigger when you hover over it */
+}
+
+#price{
+  font-weight: 700;
+  font-size: 1.4rem; /*this makes it 1.4 time the size of the root value */
+ 
+}
+
+#bottom-left-section h4 {
+  margin-bottom: 25px;
+  
+ }
+#bottom-left-section p {
+  font-size: 0.8rem;
+  margin-bottom: 40px
+  }
+
+#price-freq, #price {
+  display: inline-block;
+}
+
+#price-container {
+  margin-bottom: 10px;
+}
+
+#price-freq { /*these values set it relative to itself and the minus 3 moves it up 3 px */
+  position: relative;
+  top: -3px; 
+  font-size: 0.8rem;
+  opacity: 0.7;
+  margin-left: 5px;
+}
+
+/* finally just need to remove default bullet points and padding from the bottom right list */
+ul{
+  padding:0;
+  list-style: none;
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
